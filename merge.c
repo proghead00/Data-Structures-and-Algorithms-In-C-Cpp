@@ -34,7 +34,7 @@ int main(void)
     for (; j < n; j++)
         c[k++] = b[j];
 
-    printf("Printing the sorted and array: ");
+    printf("Printing the sorted merged array: ");
     for (i = 0; i < (m + n); i++)
     {
         printf("%d ", c[i]);
