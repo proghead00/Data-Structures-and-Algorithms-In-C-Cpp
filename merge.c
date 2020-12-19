@@ -1,53 +1,43 @@
 #include <stdio.h>
-int main()
+
+int main(void)
 {
     int m, n;
-
-    int a[m], b[n], c[m + n];
-
-    printf("Enter the value of m"); //m
+    printf("Enter the value of m: "); //m
     scanf("%d", &m);
 
-    printf("Enter the value of n"); //n
+    printf("Enter the value of n: "); //n
     scanf("%d", &n);
-
-    printf("Enter elements for a \t: \n");
+    int a[m], b[n], c[m + n];
+    printf("Enter elements for 'a' \t: ");
 
     for (int i = 0; i < m; i++)
-    {
-
         scanf("%d", &a[i]); //a
-    }
 
-    printf("Enter elements for b \t: \n");
+    printf("Enter elements for b \t: ");
     for (int i = 0; i < n; i++)
-    {
-
         scanf("%d", &b[i]); //b
-    }
 
-    int i, j, k = 0;
+    int i = 0, j = 0, k = 0;
 
     while (i < m && j < n)
     {
-
         if (a[i] < b[j])
             c[k++] = a[i++];
-
         else
-            c[k++] = b[j + 1];
-
-        for (; i < m; i++)
-            c[k++] = a[i];
-
-        for (; j < n; j++)
-            c[k++] = b[j];
+            c[k++] = b[j++];
     }
 
+    for (; i < m; i++)
+        c[k++] = a[i];
+
+    for (; j < n; j++)
+        c[k++] = b[j];
+
+    printf("Printing the sorted and array: ");
     for (i = 0; i < (m + n); i++)
     {
-        printf("%d", c[i]);
+        printf("%d ", c[i]);
     }
-
     return 0;
 }
