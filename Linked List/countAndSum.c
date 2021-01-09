@@ -5,6 +5,7 @@ struct Node
 {
     struct Node *next;
     int data;
+
 } *first = NULL;
 
 void create(int value)
@@ -32,14 +33,19 @@ void create(int value)
     }
 }
 
-void display(struct Node *p)
+void displayCountAndSum(struct Node *p)
 {
+    int c = 0, s = 0;
     while (p != NULL)
     {
         printf("%d ", p->data);
+        s = s + p->data;
+
         p = p->next;
+        c++;
     }
-    printf("\n");
+    printf("\n Number of nodes: %d\n", c);
+    printf("Sum: %d\n", s);
 }
 
 int main()
@@ -57,7 +63,7 @@ int main()
         create(element);
     }
 
-    display(first);
+    displayCountAndSum(first);
 
     return 0;
 }
