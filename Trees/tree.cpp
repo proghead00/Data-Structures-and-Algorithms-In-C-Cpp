@@ -36,6 +36,33 @@ node *buildTree()
 }
 
 void print(node *root)
+{ //+ L R
+    if (root == NULL)
+    {
+        return;
+    }
+
+    //else, print the root followed by children
+    cout << root->data << "   ";
+    print(root->left);
+    print(root->right);
+}
+
+void printIn(node *root)
+{ // L + R
+    if (root == NULL)
+    {
+        return;
+    }
+
+    //else, print the root followed by children
+    print(root->left);
+    cout << root->data << "   ";
+
+    print(root->right);
+}
+
+void printPost(node *root)
 {
     if (root == NULL)
     {
@@ -43,14 +70,21 @@ void print(node *root)
     }
 
     //else, print the root followed by children
-    cout << root->data;
     print(root->left);
     print(root->right);
+    cout << root->data << "   ";
 }
 
 int main()
 {
     node *root = buildTree();
     print(root);
+    cout << endl;
+
+    printIn(root);
+    cout << endl;
+
+    printPost(root);
+    cout << endl;
     return 0;
 }
