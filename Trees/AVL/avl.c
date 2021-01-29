@@ -81,6 +81,7 @@ struct Node *RInsert(struct Node *p, int key)
     if (BalanceFactor(p) == 2 && BalanceFactor(p->lchild) == 1)
 
         return LLRotation(p);
+
     else if (BalanceFactor(p) == 2 && BalanceFactor(p->lchild) == -1)
         return LRRotation(p);
 
