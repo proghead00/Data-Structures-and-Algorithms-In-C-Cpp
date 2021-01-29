@@ -1,3 +1,8 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "files.associations": {
+        "queue.h": "c",
+        "stdlib.h": "c",
+        "stack.h": "c"
+    }
 }

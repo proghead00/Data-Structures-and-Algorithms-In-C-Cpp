@@ -26,7 +26,7 @@ void Merge(int A[], int l, int mid, int h)
         B[k++] = A[j];
 
     for (i = l; i <= h; i++)
-        A[i] = B[i];
+        A[i] = B[i]; //copying all back to A
 }
 
 void MergeSort(int A[], int l, int h)
